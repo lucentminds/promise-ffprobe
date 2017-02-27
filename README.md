@@ -1,6 +1,14 @@
 # promise-ffprobe
 Generate json data about a media file using ffprobe. Assumes you already have ffprobe installed.
 
+## Installation
+
+Install by npm.
+
+```shell
+npm install git+https://github.com/lucentminds/promise-ffprobe.git
+```
+
 ### Useage:
 
 ```js
