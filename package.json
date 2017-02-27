@@ -1,0 +1,25 @@
+{
+	"name": "promise-ffprobe",
+	"date": "02-27-2017",
+	"description": "Generate json data about a media file using ffprobe. Assumes you already have ffprobe installed.",
+	"main": "promise-ffprobe.js",
+	"author": {
+		"name": "Scott Johnson"
+	},
+	"license": "MIT",
+	"version": "0.0.1",
+	"engines" : {
+		"node" : ">=4.0.0"
+	},
+	"repository":{
+		"type": "git",
+		"url": "https://github.com/lucentminds/promise-ffprobe.git"
+	},
+	"lifecorpDependencies": {
+	   "lifecorp-extend": ">=0.0.1",
+	   "lifecorp-application": ">=0.0.2"
+	},
+	"dependencies": {
+		"q": ">=1.4.1"
+	}
+}
