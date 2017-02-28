@@ -18,10 +18,6 @@
 		"type": "git",
 		"url": "https://github.com/lucentminds/promise-ffprobe.git"
 	},
-	"lifecorpDependencies": {
-	   "lifecorp-extend": ">=0.0.1",
-	   "lifecorp-application": ">=0.0.2"
-	},
 	"dependencies": {
 		"q": ">=1.4.1"
 	}
