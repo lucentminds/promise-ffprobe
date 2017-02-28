@@ -6,6 +6,9 @@
 	"author": {
 		"name": "Scott Johnson"
 	},
+	"scripts": {
+		"test": "node ./test/test.js"
+	},
 	"license": "MIT",
 	"version": "0.0.1",
 	"engines" : {

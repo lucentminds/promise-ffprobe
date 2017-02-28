@@ -10,6 +10,7 @@
 /* jslint node: true */
 /* global JSON:false */
 
+var fs = require( 'fs' );
 var path = require( 'path' );
 var Q = require( 'q' );
 var spawn = require( 'child_process' ).spawn;
@@ -17,7 +18,12 @@ var spawn = require( 'child_process' ).spawn;
 /**
  * This function fetches json data about a media file.
  */
-var ffprobe = module.exports = function( filePath ){ // jshint ignore:line
+var ffprobe = module.exports = function( cFilePath ){ // jshint ignore:line
+	return fileExists( cFilePath )
+	.then( spawnProbe );
+};// /ffprobe()
+
+var spawnProbe = function( filePath ){ // jshint ignore:line
     var deferred = Q.defer();
 	var cData = '';
 	var params = [ '-print_format', 'json', '-show_streams', filePath ];
@@ -56,4 +62,19 @@ var ffprobe = module.exports = function( filePath ){ // jshint ignore:line
 
     return deferred.promise;
 
-};// /ffprobe()
+};// /spawnProbe()
+
+var fileExists = function( cFilePath ) {
+    var deferred = Q.defer();
+
+	fs.lstat( cFilePath, function( err, stats ){
+
+		if( err ) {
+			return deferred.reject( err );
+		}
+
+		deferred.resolve( cFilePath );
+	});
+
+	return deferred.promise;
+};// /fileExists()
